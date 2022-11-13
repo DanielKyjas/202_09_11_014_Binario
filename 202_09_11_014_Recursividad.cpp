@@ -4,35 +4,18 @@
 #include <iostream>
 void invertir(int num)
 {
-    std::string numbin2, numbin;
-    int binario=1;
-    do {
-        binario * 2;
-    } while (binario >= num);
-    do {
-        if (binario < num) {
-            numbin2 = "0";
-        }
-        else {
-            numbin2 = "1";
-            binario - num;
-        }
-        numbin = numbin2 + numbin2;
-    } while (num > 0);
-    std::string invertir = numbin; 
-
+    if (num != 0)
+    {
+        invertir(num / 2);
+        std::cout << num % 2;
+    }
 }
 
 int main()
 {
-    int numerito;
-    do {
-        std::cout << "Ingresa un numero de mas de 4 cifras: ";
-        std::cin >> numerito;
-        if (numerito < 0) {
-            std::cout << "\nIngresa un numero entero y positivo de 4 cifras... \n";
-        }
-    } while (numerito < 0);
-    invertir(numerito);
+    int decimal;
+        std::cout << "Dame un numero para convertirlo en binario: \n";
+        std::cin >> decimal;
+        invertir(decimal);
     std::cout << "\n\n";
 }
